@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Demon Slayer Website</title>	
+	<link rel="icon" href="{% static 'Main/IMAGE/logo1.png' %}">
+	<link rel="stylesheet" href="{% static 'Main/CSS/style.css' %}">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, unser-scalable=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="loader-area">
+		<img src="{% static 'Main/IMAGE/nezuko1.png' %}" alt="nezuko" width="100%", height="100%">
+		<div class="loading-text">
+		<img src="{% static 'Main/IMAGE/nezuko.gif' %}" alt="nezuko">
+		</div>
+		<div class="loader"></div>
+		</div>
+		<section class="front">
+			<header>
+				<div class="header">
+					<nav>
+						<img src="{% static 'Main/IMAGE/logo1.png' %}" alt="logo" width="50", height="50">
+						<ul>
+							<li><a href="{% url 'Home' %}">HOME</a></li>
+							<li><a href="{% url 'Product' %}">PRODUCTS</a></li>
+							<li><a href="{% url 'AboutMe' %}">ABOUT ME</a></li>
+							<li><a href="{% url 'AddOns' %}">GALLERY</a></li>
+							<button class="btnLogin"><a href="{% url 'Logout' %}">LOGOUT</button></a>
+						</ul>
+					</nav>
+				</div>
+		</header>
+<video src="{% static 'Main/VIDEO/nezuko.mp4' %}" autoplay muted loop autoplay></video>
+    <div class="row">
+		<div class="emojibox">
+		<div class="box">
+			<h1>My favorite emoji</h1>
+			<p>I don't just <em>like</em> emoji,<br>
+			I <strong>love</strong> emoji!</p>
+			<p>Here's a table of my most-used emoji:</p>
+			<table>
+				<thead>
+				<tr><th>#</th><th>Emoji</th><th>Name</th></tr>
+				</thead>
+					<tbody>
+						<tr><td>1.</td><td>🐞</td><td>Lady Beetle</td></tr>
+						<tr><td>2.</td><td>🐍</td><td>Snake</td></tr>
+						<tr><td>3.</td><td>👍</td><td>Thumbs Up Sign</td></tr>
+						<tr><td>4.</td><td>🎉</td><td>Party Popper</td></tr>
+						<tr><td>5.</td><td>🤩</td><td>Grinning Face With Star Eyes</td></tr>
+						<tr><td>6.</td><td>😂</td><td>Face With Tears Of Joy</td></tr>
+						<tr><td>7.</td><td>🐶</td><td>Dog Face</td></tr>
+						<tr><td>8.</td><td>🍿</td><td>Popcorn</td></tr>
+						<tr><td>9.</td><td>😎</td><td>Smiling Face With Sunglasses</td></tr>
+						<tr><td>10.</td><td>✨</td><td>Sparkles</td></tr>
+						<tr><td>11.</td><td>💬</td><td>Speech Balloon</td></tr>
+						<tr><td>12.</td><td>😘</td><td>Face Throwing A Kiss</td></tr>
+					</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+</div>
+<div class="column">
+	<div class="emojibox">
+		<div class="box">
+		<center><img src="{% static 'Main/IMAGE/me.png' %}" width="100px" height="100px"></center>
+		<h2>About me</h2>
+		<p>Name: John Frederick D. Gelay</p>
+		<p>Course/Section: BSIT 2A-Algorithm</p>
+		<p>Address:Mantalongon, Dalaguete, Cebu</p>
+		<p>Age: 21</p>
+		<p>Hobby: Watching Movies, Cleaning, Want to Learn More</p>
+		<p>Motto: Expect Nothing and you will never be Disappointed</p>
+		</div>
+</div>
+    <div class="column">
+	<div class="box">
+		<div class="footer-col-4">
+			<h3>Favorite Links:</h3>
+			<ul>
+				<a href="https://www.instagram.com/">
+					<img src="{% static 'Main/IMAGE/instagram.png' %}" width="50" height="25"></a>
+				<a href="https://bilibili.tv/">
+					<img src="{% static 'Main/IMAGE/bilibili.png' %}" width="35" height="25"></a>
+					<a href="https://web.facebook.com/">
+						<img src="{% static 'Main/IMAGE/facebook.png' %}" width="50" height="25"></a>
+				<a href="https://www.youtube.com/">
+					<img src="{% static 'Main/IMAGE/youtube.png' %}" width="40" height="25"></a>
+				
+			</ul>
+		</div>
+	</div>
+	
+</section>
+	<script type="text/javascript" src="{% static 'Main/JS/aboutme.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Main/JS/preloader.js' %}"></script>
+</body>
+</html>
+

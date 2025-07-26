@@ -1,0 +1,285 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color:white;
+}
+img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform: all 0.5s ease-out;
+	transition: opacity 0.75s;
+    visibility: 0.75s;
+}
+.wrapper{
+    position: relative;
+    width: 600px;
+    height: 500px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    transition: height .2s ease;
+    padding: 20px;
+    color:#fcfcfc;
+}
+
+h2{
+color: white;
+}
+
+.wrapper.active{
+    height: 770px;
+}
+.wrapper .form-box{
+    width: 100%;
+ 
+}
+.wrapper .form-box.login{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+.wrapper.active .form-box.login{
+    transition: none;
+    transform: translateX(-400px);
+}
+
+.wrapper .form-box.registration{
+    position: absolute;
+    transform:translateX(400px);
+}
+.wrapper.active .form-box.registration{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.form-box h1{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+h1{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.form-box h1{
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin:30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    top: -5px;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+.input-box input{
+    color: white;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size:1.2em;
+    line-height: 60px;
+    z-index:1000; 
+}
+.remember-pass{
+    font-size: .9em;
+    color: white;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.remember-pass label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+
+.remember-pass a{
+    color: white;
+    text-decoration: none;
+}
+.remember-pass a:hover{
+    text-decoration: underline;
+}
+.btn{
+    width: 100%;
+    height: 45px;
+    color: white;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor:pointer;
+    font-weight: 500;
+}
+.btn a{
+	color: white;
+	text-decoration: none;
+	cursor:pointer;
+}
+.login-register{
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+}
+.login-register label input{
+    accent-color: white;
+    margin-right: 3px;
+}
+.login-register a{
+    color: white;
+    text-decoration: none;
+}
+.login-register a:hover{
+    text-decoration: underline;
+}
+
+/* Preloader*/
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#loader-area{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	transform: all 0.5s ease-out;
+	transition: opacity 0.75s;
+    visibility: 0.75s;
+	z-index: 1000;
+}
+#loader-area.fade-out{
+	opacity:0;
+	visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+.loader-text {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 10px;
+	font-family: arial;
+	color: black;
+	
+}
+.load_anim1,
+.load_anim2{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 5px solid;
+	border-left-color: #ffffff;
+	border-top-color: #a8a8a8;
+	border-right-color: #444444;
+	border-bottom-color: #000000;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin:-50px 0 0 -50px;
+	animation: loadAnim 1.5s;
+	animation-iteration-count: infinite;
+	transition: opacity 1s; 
+    visibility: 1s;
+}
+.load_anim2{
+	animation: loadAnim2 1.5s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes loadAnim{
+	0%{ transform: rotate3d(1,1,1,0deg); }
+	100%{ transform: rotate3d(1,1,1,360deg); }
+}
+@keyframes loadAnim2{
+	0%{ transform: rotate3d(1,1,1,0deg); }
+	100%{ transform: rotate3d(1,1,1,-360deg); }
+}
+.input-box span{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-weight: bolder;
+    font-size: 1rem;
+    font-style: italic;
+    visibility: hidden;
+}
+
+.input-box.success input{
+    border-bottom: 4px solid #2ece71;
+}
+.input-box.error input{
+    border-bottom: 4px solid #ff0000;
+}
+.input-box.success span{
+    border-bottom: 4px solid #2ece71;
+    visibility:visible;
+    
+}
+.input-box.error span{
+    border-bottom: 4px solid #ff0000;
+    visibility:visible;
+}

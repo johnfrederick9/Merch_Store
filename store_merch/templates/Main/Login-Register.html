@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Demon Slayer Website</title>	
+	<link rel="icon" href="{% static 'Main/IMAGE/logo1.png' %}">
+	<link rel="stylesheet" href="{% static 'Main/CSS/login.css' %}">
+	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, unser-scalable=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+	<div id="loader-area">
+	<img src="{% static 'Main/IMAGE/hashira.png' %}" width="100%", height="100%">
+		<span class="loader-text">Loading....</span>
+		<span class="load_anim1"></span>
+		<span class="load_anim2"></span>
+</div>
+<video src="{% static 'Main/VIDEO/Hashiras.mp4' %}" autoplay muted loop autoplay></video>
+	<div class="wrapper">
+		<span class="logo"><img src="{% static 'Main/IMAGE/logo1.png' %}" width="60" height="50" ></span>
+			<!--FORM BOX LOGIN-->
+			{% if page == 'login'%}
+			<form method='post' class= "form">
+				{% csrf_token %}
+				<div class="form-box login">
+					<h1>LOGIN</h1>
+							<div class="input-box">
+								<input type="text" class='form-control' name = "username" required> 
+								<label>Username</label>
+							</div>
+							<div class="input-box">
+								<input type="password"  class='form-control' name = "password" required>
+								<label>Password</label>
+							</div>
+							<div class="remember-pass">
+								<a href="#"> Forgot Password?</a> </label>	
+							</div>
+							<button type="submit" class="btn">Login</button>
+							<div class="login-register">
+								<p>Don't have an account? <a href="{% url 'Register' %}">Register</a></p>
+							</div>
+						</div>
+					</form>			
+			<!--FORM BOX REGISTRATION-->
+		<div class="form-box registration">
+			{% else %}
+				<form method='post'>
+				{% csrf_token %}
+				<h1>REGISTRATION</h1><br>
+					{% for field in form%}
+					<div class="input-box">
+						<label>{{field.label}}</label>
+						{{field}}
+					</div>
+					{% endfor %}
+					<button type="submit" class="btn">Submit</button>
+					<div class="login-register">
+						<p>Already have an account? <a href="{% url 'Login' %}">Login</a></p>
+					</div>
+				</form>
+				{% endif %}
+			</div>
+		</div>
+	<script type="text/javascript" src="{% static 'Main/JS/preloader.js' %}"></script>
+	<script type="text/javascript" src="{% static 'Main/JS/cart.js' %}"></script>
+</body>
+</html>
+

@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+/*------- Title -------*/
+.title{
+	color: #111;
+	z-index: 100;
+	text-align: center;
+	margin: 50px;
+	position: relative;
+}
+/*------- Header&&Video -------*/
+header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 0 5%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	z-index: 99;
+    background: black;
+}
+.header .btnLogin{
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid #fff;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: 100;
+	margin-left: 20px;
+	margin-right: 20px;
+	transition: .5s;
+} 
+.header .btnLogin:hover{
+	background: white;
+	color: black;
+}
+.header .btnCart{
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid #fff;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: 100;
+	margin-left: 20px;
+	transition: .5s;
+} 
+.header .btnCart:hover{
+	background: white;
+	color: black;
+}
+.header a{
+	position: relative;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+.header a:hover{
+	color: red;
+	font-size: 15px;
+}
+.header a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: rgb(247, 10, 10);
+	border-radius: 5px;
+	left: 0;
+	bottom: -6px;
+	transform: scaleX(0);
+	transition: transform .5s;
+	transform-origin: right;
+}
+.header a:hover::after{
+	transform-origin: left;
+	transform: scaleX(1);
+}
+.header .row{
+		margin-top: 70px;
+	}
+.front{
+	justify-content: center;
+	right:0;
+	width:100%;
+	min-height: 100vh;
+	padding: 100px;
+	display: flex;
+	align-items: center;
+	background: #111;
+	color: #fff;
+}
+.front header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index:10;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.toggle{ 
+	position: relative;
+	width: 60px;
+	height: 60px;
+	background-size: 30px;
+	cursor: pointer;
+	background-position: center;
+}
+.front video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.8;
+}
+.body{
+	z-index: 1000;
+}
+nav{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px 8%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 50px;
+}
+
+/*------- Preloader--index -------*/
+*,*:after,*:before{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#loader-area{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	transform: all 0.5s ease-out;
+	transition: opacity 0.75s;
+	visibility: 0.75s;
+	z-index: 1000;
+}
+#loader-area.Out{
+	opacity:0;
+	visibility: hidden;
+    transition: all .5s ease-in-out;
+}
+.loading-text{
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+.wrapper{
+	margin-right: 20px;
+	z-index:100;
+	display: fixed;
+   	width: 100%;
+	height: 100%;
+	padding:25px;
+	background: transparent;
+	border: 2px solid rgba(255,255,255,.5);
+	backdrop-filter: blur(20px);
+	box-shadow: 0 0 30px rgba(0,0,0, .5);
+	border-bottom-left-radius: 20px;
+	border-radius: 20px;
+	overflow: hidden;
+	transition: height .2s ease;
+}
+.box {
+	z-index: 1000;
+	border: 0.35rem solid;
+	padding: 2vw;
+	border-image: conic-gradient(from var(--angle), var(--c2), var(--c1) 0.1turn, var(--c1) 0.15turn, var(--c2) 0.25turn) 30;
+	animation: borderRotate var(--d) linear infinite forwards;
+}
+.box a{
+	color: white;
+    text-decoration: none;
+}
+.box a:hover{
+	color: red;
+	font-size: 15px;
+}
+.box:nth-child(2) {
+	border-image: radial-gradient(ellipse at var(--gradX) var(--gradY), var(--c1), var(--c1) 10%, var(--c2) 40%) 30;
+	animation: borderRadial var(--d) linear infinite forwards;
+}
+  @media (min-width: 1200px)
+  {
+	.container{
+	  max-width: 1140px;
+	}
+  }
+  .Yorder{
+	margin-top: 15px;
+	width: 100%;
+	padding: 20px;
+	border: 1px solid #dadada;
+  }
+  table{
+	margin: 0;
+	padding: 0;
+  }
+  th{
+	border-bottom: 1px solid #dadada;
+	padding: 10px 0;
+  }
+  tr>td:nth-child(1){
+	text-align: left;
+	color: #ffffff;
+  }
+  tr>td:nth-child(2){
+	text-align: right;
+	color: #ffffff;
+  }
+  td{
+	border-bottom: 1px solid #dadada;
+	padding: 25px 25px 25px 0;
+  }
+  .column {
+	float: left;
+	width: 50%;
+	margin-right: 20px;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+	margin-right: 20px;
+	content: "";
+	display: table;
+	clear: both;
+  }
+  
+  p{
+	display: block;
+	color: rgb(240, 240, 240);
+	margin: 0;
+  }
+  .btn{
+    width: 100%;
+    height: 45px;
+    color: white;
+    background: black;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor:pointer;
+    font-weight: 500;
+}
+.btn a{
+	color: white;
+	text-decoration: none;
+	cursor:pointer;
+}
+  .input-box{
+    position: relative;
+    width: 90%;
+    height: 50px;
+    border-bottom: 2px solid white;
+    margin:30px 0;
+}
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: white;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -5px;
+}
+.input-box input{
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+}
+.input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size:1.2em;
+    line-height: 60px;
+}
+/*------Cart------*/
+
+.cart-page{
+	margin: 10px auto;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+h5{
+    color: white;
+}
+    .table a{
+	position: relative;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+.table a:hover{
+	color: red;
+	font-size: 15px;
+}
+.table a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: rgb(247, 10, 10);
+	border-radius: 5px;
+	left: 0;
+	bottom: -6px;
+	transform: scaleX(0);
+	transition: transform .5s;
+	transform-origin: right;
+}
+.table a:hover::after{
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+.cart-info{
+	display: flex;
+	flex-wrap: wrap;
+}
+th{
+	text-align: left;
+	padding: 5px;
+	color: #fff;
+	background-color: #3a3a3a;
+	font-weight: normal;
+}
+td{
+	padding: 10px 5px;
+	color: #f7f7f7;
+}
+td input{
+	width: 40px;
+	height: 30px;
+	padding: 5px;
+}
+td a{
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+}
+td img{
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+.total-price{
+	display: flex;
+	justify-content: flex-end;
+}
+.total-price table{
+	border-top: 3px solid #ffffff;
+	width: 100%;
+	max-width: 400px;
+}
+td:last-child{
+	text-align: right;
+}
+th:last-child{
+	text-align: right;
+}
+
+
+
+@media only screen and (max-width: 800px){
+	
+	nav ul{
+		position: absolute;
+		top: 10px;
+		left: 0;
+		background: rgb(241, 241, 241);
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+	nav ul li{
+		display: block;
+		margin-right: 50px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	nav ul li a{
+		color: #fff;
+	}	
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+	}
+}
+.quantity{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:20px;
+	
+
+}
+
+.chg-quantity{
+	width: 10px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+	transition:.1s;
+	visibility: hidden;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+
+.hidden{
+	display: none!important;
+}
+.quantity img{
+	width: 10px;
+	height: 10px;
+	margin-right: 50px;
+}
+.btnLogin{
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background-color:black;
+	border: 2px solid #fff;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: 100;
+	margin-left: 20px;
+	margin-right: 20px;
+	padding:10px;
+	transition: .5s;
+	
+} 
+.btnLogin:hover{
+	background: white;
+	color: black;
+}

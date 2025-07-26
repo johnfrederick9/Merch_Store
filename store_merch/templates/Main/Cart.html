@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>Demon Slayer Website</title>	
+	<link rel="icon" href="{% static 'Main/IMAGE/logo1.png' %}">	
+	<link rel="stylesheet" href="{% static 'Main/CSS/cart.css' %}">
+	<script type="text/javascript">
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+			let cookieValue = null;
+			if (document.cookie && document.cookie !== '') {
+				const cookies = document.cookie.split(';');
+				for (let i = 0; i < cookies.length; i++) {
+					const cookie = cookies[i].trim();
+					// Does this cookie string begin with the name we want?
+					if (cookie.substring(0, name.length + 1) === (name + '=')) {
+						cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+						break;
+					}
+				}
+			}
+			return cookieValue;
+		}
+		const csrftoken = getToken('csrftoken');
+
+		function getCookie(name){
+			var cookieArr= document.cookie.split(";");
+
+			for(var i = 0; i < cookieArr.length; i++) {
+				var cookiePair = cookieArr[i].split("=");
+
+				if(name == cookiePair[0].trim()){
+					return decodeURIComponent(cookiePair[1]);
+				}
+			}
+			return null;
+		}
+
+		var cart = JSON.parse(getCookie('cart'))
+		
+		if(cart == undefined){
+			cart = {}
+			console.log('Cart was created!', cart)
+			document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+		console.log('Cart:', cart)
+	</script>
+</head>
+<body>
+   <section class="front">
+			<header>
+				<div class="header">
+					<nav>
+						<img src="{% static 'Main/IMAGE/logo1.png' %}" alt="logo" width="50", height="50">		
+					</nav>
+</header>
+<video src="{% static 'Main/VIDEO/giyuu.mp4' %}" autoplay muted loop autoplay></video>			
+			<div class="wrapper">
+			<div class="column">
+				<div class="row">
+						<div class="wrapper">
+						<table class="table">
+						<tr>
+							<th>
+								<a  class="btn btn-outline-dark" href="{% url 'Product' %}">&#x2190; Continue Shopping</a>
+							</th>
+							<th><h5>Items: <strong> {{order.get_cart_items}}</strong></h5></th>
+							<th><h5>Total:<strong> ${{order.get_cart_total|floatformat:2}}</strong></h5></th>
+							<th>
+								<a class="btn btn-success" href="{% url 'OrderForm' %}">Checkout</a>
+							</th>
+						</tr>
+					</table>
+				</div>
+				<div class="row">
+					<div class="small-container cart-page">
+						<table>
+							<tr>
+								<th>Product</th>
+								<th>Quantity</th>
+								<th>Total</th>
+							</tr>
+							<hr>
+							{% for item in items%}
+							<tr>
+								<td>
+									<div class="cart-info">
+										<img src="{{item.product.imageURL}}">
+										<div>
+											<p>{{item.product.name}}</p>
+											<small>Price:$ {{item.product.price|floatformat:2}}</small>
+											<br>
+										</div>
+									</div>
+								</td>
+								<td class= quantity>x{{item.quantity}}
+								<div class="quantity">
+									<img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'Main/IMAGE/arrow-up.png' %}">
+									<img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'Main/IMAGE/arrow-down.png' %}">
+								</div></td>
+								<td>${{item.get_total}}</td>
+							</tr>
+							{% endfor %}
+						</table>
+		</div>
+	</div>
+</section>
+<script type="text/javascript" src="{% static 'Main/JS/cart.js' %}"></script>
+</body>
+</html>
+

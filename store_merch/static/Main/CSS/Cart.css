@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900;&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+/*------- Title -------*/
+.title{
+	color: #111;
+	z-index: 100;
+	text-align: center;
+	margin: 50px;
+	position: relative;
+}
+/*------- Header&&Video -------*/
+.header{
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 0 5%;
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+	z-index: 100;
+    background: rgb(0, 0, 0);
+}
+.header .btnLogin{
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid #fff;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: 100;
+	margin-left: 20px;
+	margin-right: 20px;
+	transition: .5s;
+} 
+.header .btnLogin:hover{
+	background: white;
+	color: black;
+}
+.header .btnCart{
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background: transparent;
+	border: 2px solid #fff;
+	outline: none;
+	border-radius: 6px;
+	cursor: pointer;
+	font-size: 1.1em;
+	font-weight: 100;
+	margin-left: 20px;
+	transition: .5s;
+} 
+.header .btnCart:hover{
+	background: white;
+	color: black;
+}
+.header a{
+	position: relative;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+.header a:hover{
+	color: red;
+	font-size: 15px;
+}
+.header a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: rgb(247, 10, 10);
+	border-radius: 5px;
+	left: 0;
+	bottom: -6px;
+	transform: scaleX(0);
+	transition: transform .5s;
+	transform-origin: right;
+}
+.header a:hover::after{
+	transform-origin: left;
+	transform: scaleX(1);
+}
+.header .row{
+		margin-top: 70px;
+	}
+.front{
+	justify-content: center;
+	right:0;
+	width:100%;
+	min-height: 100vh;
+	padding: 100px;
+	display: flex;
+	align-items: center;
+	background: #111;
+	color: #fff;
+}
+.front header{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	z-index:10;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+}
+.toggle{ 
+	position: relative;
+	width: 60px;
+	height: 60px;
+	background-size: 30px;
+	cursor: pointer;
+	background-position: center;
+}
+.front video {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0.8;
+}
+h1,h2,h3,h4,h5,h6{
+	color:hsl(0, 0%, 30%);
+}
+/*------- Navigation -------*/
+nav{
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px 8%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+nav ul li{
+	list-style: none;
+	display: inline-block;
+	margin-left: 50px;
+}
+.navbar{
+	display: flex;
+	align-items: center;
+	padding: 20px;
+}
+.wrapper{
+    position: relative;
+    width: 100%;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,.5);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0,0,0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    transition: height .2s ease;
+    padding: 20px;
+    color:#fcfcfc;
+}
+.column {
+	float: left;
+	width: 100%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+/*------Cart------*/
+
+.cart-page{
+	margin: 10px auto;
+}
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+h5{
+    color: white;
+}
+    .table a{
+	position: relative;
+	font-size: 1.1em;
+	text-decoration: none;
+	color: white;
+	font-size: 15px;
+}
+.table a:hover{
+	color: red;
+	font-size: 15px;
+}
+.table a::after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 3px;
+	background: rgb(247, 10, 10);
+	border-radius: 5px;
+	left: 0;
+	bottom: -6px;
+	transform: scaleX(0);
+	transition: transform .5s;
+	transform-origin: right;
+}
+.table a:hover::after{
+	transform-origin: left;
+	transform: scaleX(1);
+}
+
+.cart-info{
+	display: flex;
+	flex-wrap: wrap;
+}
+th{
+	text-align: left;
+	padding: 5px;
+	color: #fff;
+	background-color: #3a3a3a;
+	font-weight: normal;
+}
+td{
+	padding: 10px 5px;
+	color: #f7f7f7;
+}
+td input{
+	width: 40px;
+	height: 30px;
+	padding: 5px;
+}
+td a{
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+}
+td img{
+	width: 80px;
+	height: 80px;
+	margin-right: 10px;
+}
+.total-price{
+	display: flex;
+	justify-content: flex-end;
+}
+.total-price table{
+	border-top: 3px solid #ffffff;
+	width: 100%;
+	max-width: 400px;
+}
+td:last-child{
+	text-align: right;
+}
+th:last-child{
+	text-align: right;
+}
+
+
+
+@media only screen and (max-width: 800px){
+	
+	nav ul{
+		position: absolute;
+		top: 100px;
+		left: 0;
+		background: rgb(241, 241, 241);
+		width: 100%;
+		overflow: hidden;
+		transition: max-height 0.5s;
+	}
+	nav ul li{
+		display: block;
+		margin-right: 50px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	nav ul li a{
+		color: #fff;
+	}	
+	.menu-icon{
+		display: block;
+		cursor: pointer;
+	}
+}
+.quantity{
+	display: inline-block;
+	font-weight: 1000;
+	padding-right: 20px;
+}
+.chg-quantity{
+	width: 10px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	margin-left: 5px;
+	transition:.1s;
+}
+.chg-quantity:hover{
+	opacity: .6;
+}
+.hidden{
+	display: none!important;
+}
+.quantity img{
+	width: 10px;
+	height: 10px;
+	margin-right: 50px;
+}
